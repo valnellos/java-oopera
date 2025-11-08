@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Theatre {
     static Scanner scanner = new Scanner(System.in);
     static MusicAuthor musicAuthor = new MusicAuthor();
-    static  Actor actor = new Actor();
     static Director director = new Director();
     static Choreographer choreographer = new Choreographer();
     static Ballet ballet = new Ballet();
@@ -31,7 +30,7 @@ public class Theatre {
 
             switch (command) {
                 case "1":
-                    actor.addMultipleActors();
+                    addMultipleActors();
                     System.out.println("Актер успешно добавлен");
                     break;
                 case "2":
@@ -73,7 +72,10 @@ public class Theatre {
                     } else {
                         System.out.println("Извините такой команды не существует");
                     }
-                    return;
+                    break;
+                case "8":
+                    printActorList();
+                    break;
                 default:
                     System.out.println("Некорректная команда");
 
@@ -152,9 +154,9 @@ public class Theatre {
     }*/
 
 
-
     }
-    public static void printMenu () {
+
+    public static void printMenu() {
         System.out.println("Выберите нужную команду: ");
         System.out.println("1) Добавить актера.");
         System.out.println("2) Добавить режиссёра.");
@@ -165,5 +167,35 @@ public class Theatre {
         System.out.println("7) Вывести список труппы для каждого спектакля.");
         System.out.println("8) Заменить актера в спектакле.");
 
+    }
+
+    public static void printActorList() {
+        actorList.forEach(actor -> {
+            System.out.println(actor.toString());
+        });
+    }
+
+    public static void addMultipleActors() {
+        System.out.print("Сколько актёров вы хотите добавить? ");
+        int count = scanner.nextInt();
+        scanner.nextLine();
+
+        for (int i = 0; i < count; i++) {
+            System.out.println("Актёр №" + (i + 1));
+            addNewActor();
+        }
+    }
+
+    public static void addNewActor() {
+        System.out.print("Введите Имя: ");
+        String name = scanner.nextLine();
+        System.out.print("Введите Фамилию: ");
+        String surname = scanner.nextLine();
+        System.out.print("Введите пол (MALE, FEMALE): ");
+        Gender gender = Gender.valueOf(Theatre.scanner.nextLine());
+        System.out.print("Введите рост: ");
+        int height = scanner.nextInt();
+
+        actorList.add(new Actor(name, surname, gender, height));
     }
 }

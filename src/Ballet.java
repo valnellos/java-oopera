@@ -11,7 +11,7 @@ public class Ballet extends MusicalShow {
     }
 
     public Ballet() {
-        super();
+
     }
 
 
