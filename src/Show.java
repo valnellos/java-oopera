@@ -47,7 +47,7 @@ public class Show {
         return true;
     }
 
-    public boolean changeActor(Actor oldActor, Actor newActor) {
+    public void changeActor(Actor oldActor, Actor newActor) {
         // Сопоставляем oldActor и newActor, и если их можно заменить -- проходим дальше
         if (Objects.equals(oldActor.name, newActor.name) && Objects.equals(oldActor.surname, newActor.surname) && oldActor.gender == newActor.gender) {
 
@@ -56,11 +56,9 @@ public class Show {
                 Actor actorInShow = this.listOfActors.get(indexOldActor);
                 if (Objects.equals(actorInShow.name, oldActor.name) && Objects.equals(actorInShow.surname, oldActor.surname) && actorInShow.gender == oldActor.gender) {
                     this.listOfActors.set(indexOldActor, newActor);
-                    return true;
+                    return;
                 }
             }
         }
-        
-        return  true;
     }
 }
