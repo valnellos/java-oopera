@@ -251,20 +251,20 @@ public class Theatre {
     }
 
     public static void addOpera() {
-//        if (choreographerList.isEmpty()) {
-//            System.out.println("Добавь хотя бы одного Choreographer");
-//            return;
-//        }
-//
-//        if (directorList.isEmpty()) {
-//            System.out.println("Добавь хотя бы одного Director");
-//            return;
-//        }
-//
-//        if (musicAuthorList.isEmpty()) {
-//            System.out.println("Добавь хотя бы одного MusicAuthor");
-//            return;
-//        }
+        if (choreographerList.isEmpty()) {
+            System.out.println("Добавь хотя бы одного Choreographer");
+            return;
+        }
+
+        if (directorList.isEmpty()) {
+            System.out.println("Добавь хотя бы одного Director");
+            return;
+        }
+
+        if (musicAuthorList.isEmpty()) {
+            System.out.println("Добавь хотя бы одного MusicAuthor");
+            return;
+        }
 
 
         System.out.println("Введите название оперы: ");
@@ -292,6 +292,11 @@ public class Theatre {
     }
 
     public static void addNormalShow() {
+        if (directorList.isEmpty()) {
+            System.out.println("Добавь хотя бы одного Director");
+            return;
+        }
+
         System.out.println("Введите название шоу: ");
         String title = scanner.nextLine();
 
@@ -348,20 +353,20 @@ public class Theatre {
     }
 
     public static void addBallet() {
-        //        if (choreographerList.isEmpty()) {
-//            System.out.println("Добавь хотя бы одного Choreographer");
-//            return;
-//        }
-//
-//        if (directorList.isEmpty()) {
-//            System.out.println("Добавь хотя бы одного Director");
-//            return;
-//        }
-//
-//        if (musicAuthorList.isEmpty()) {
-//            System.out.println("Добавь хотя бы одного MusicAuthor");
-//            return;
-//        }
+        if (choreographerList.isEmpty()) {
+            System.out.println("Добавь хотя бы одного Choreographer");
+            return;
+        }
+
+        if (directorList.isEmpty()) {
+            System.out.println("Добавь хотя бы одного Director");
+            return;
+        }
+
+        if (musicAuthorList.isEmpty()) {
+            System.out.println("Добавь хотя бы одного MusicAuthor");
+            return;
+        }
 
         System.out.println("Введите название балета: ");
         String title = scanner.nextLine();
