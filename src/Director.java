@@ -10,11 +10,11 @@ public class Director extends Person {
 
     @Override
     public String toString() {
-        return "Director{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", gender='" + gender + '\'' +
-                ", numberOfShows='" + numberOfShows + '\'' +
+        return "Режиссер{" +
+                "Имя='" + name + '\'' +
+                ", Фамилия='" + surname + '\'' +
+                ", Пол='" + gender + '\'' +
+                ", Количество поставленных спектаклей='" + numberOfShows + '\'' +
                 '}';
     }
 }

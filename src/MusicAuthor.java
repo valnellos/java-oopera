@@ -5,10 +5,10 @@ public class MusicAuthor extends Person {
 
     @Override
     public String toString() {
-        return "MusicAuthor{" +
-                "surname='" + surname + '\'' +
-                ", name='" + name + '\'' +
-                ", gender='" + gender + '\'' +
+        return "Автор музыки{" +
+                "Фамилия='" + surname + '\'' +
+                ", Имя='" + name + '\'' +
+                ", Пол='" + gender + '\'' +
                 '}';
     }
 }

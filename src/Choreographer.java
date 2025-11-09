@@ -5,10 +5,10 @@ public class Choreographer extends Person {
 
     @Override
     public String toString() {
-        return "Choreographer{" +
-                "surname='" + surname + '\'' +
-                ", name='" + name + '\'' +
-                ", gender='" + gender + '\'' +
+        return "Хореограф{" +
+                "Фамилия='" + surname + '\'' +
+                ", Имя='" + name + '\'' +
+                ", Пол='" + gender + '\'' +
                 '}';
     }
 }
