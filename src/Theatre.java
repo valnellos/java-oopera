@@ -18,6 +18,20 @@ public class Theatre {
     public static void main(String[] args) {
         System.out.println("Поехали!");
 
+        actorList.add(new Actor("Актер 0", "фам 0", Gender.MALE, 180));
+        actorList.add(new Actor("Актер 1", "фам 11", Gender.FEMALE, 150));
+        actorList.add(new Actor("Актер 2", "фам 012", Gender.MALE, 180));
+        actorList.add(new Actor("Актер 3", "фам 1 3", Gender.FEMALE, 150));
+        actorList.add(new Actor("Актер 5", "фам 1123213", Gender.FEMALE, 150));
+
+        directorList.add(new Director("Director 0", "фам 0", Gender.MALE, 15));
+        directorList.add(new Director("Director 1", "фам 13", Gender.FEMALE, 15));
+
+        choreographerList.add(new Choreographer("Director 1", "фам 13", Gender.FEMALE));
+        choreographerList.add(new Choreographer("Director 1", "фам 13", Gender.FEMALE));
+
+        musicAuthorList.add(new MusicAuthor("Director 1", "фам 13", Gender.FEMALE));
+
         while (true) {
             printMenu();
 
