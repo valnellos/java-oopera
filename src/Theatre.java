@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.StringJoiner;
 
 public class Theatre {
     static Scanner scanner = new Scanner(System.in);
@@ -31,6 +32,31 @@ public class Theatre {
         choreographerList.add(new Choreographer("Director 1", "фам 13", Gender.FEMALE));
 
         musicAuthorList.add(new MusicAuthor("Director 1", "фам 13", Gender.FEMALE));
+
+        ballet = new Ballet(
+                "Ballet",
+                160,
+                "librettoText librettoText librettoText librettoText",
+                choreographerList.getFirst(),
+                directorList.getFirst(),
+                musicAuthorList.getFirst()
+        );
+
+        show = new Show(
+                "Show",
+                160
+        );
+        show.setDirector(directorList.getLast());
+
+        opera = new Opera(
+                "Opera",
+                160,
+                "librettoText librettoText librettoText librettoText",
+                123213,
+                choreographerList.getFirst(),
+                directorList.getFirst(),
+                musicAuthorList.getFirst()
+        );
 
         while (true) {
             printMenu();
@@ -72,7 +98,7 @@ public class Theatre {
                     break;
                 case "6":
                     System.out.println("Выберите актера которого хотите добавить в спектакль");
-                    addActorInShow();
+                    addActorsInShow();
 
                     break;
                 case "7":
@@ -120,7 +146,6 @@ public class Theatre {
     public static void addMultipleActors() {
         System.out.print("Сколько актёров вы хотите добавить? ");
         int count = scanner.nextInt();
-        scanner.nextLine();
 
         for (int i = 0; i < count; i++) {
             System.out.println("Актёр №" + (i + 1));
@@ -146,9 +171,8 @@ public class Theatre {
     }
 
     public static void addMultipleDirectors() {
-        System.out.print("Сколько Режиссеров вы хотите добавить? ");
+        System.out.print("Сколько Режиссеров вы хотите добавить?");
         int count = scanner.nextInt();
-        Theatre.scanner.nextLine();
 
         for (int i = 0; i < count; i++) {
             System.out.println("Режиссер №" + (i + 1));
@@ -191,8 +215,10 @@ public class Theatre {
     public static void addNewChoreographer() {
         System.out.print("Введите Имя: ");
         String name = scanner.nextLine();
+
         System.out.print("Введите Фамилию: ");
         String surname = scanner.nextLine();
+
         System.out.print("Введите пол (MALE, FEMALE): ");
         Gender gender = Gender.valueOf(scanner.nextLine());
 
@@ -327,13 +353,15 @@ public class Theatre {
         show.setDirector(director);
     }
 
-    public static void addActorInShow() {
-        System.out.println("Актера Театра:");
+    public static void addActorsInShow() {
         for (int i = 0; i < actorList.size(); i++) {
-            System.out.println("Актер №" + (i + 1) + " " + actorList.get(i));
-        }
+            System.out.println("Актеры Театра:");
+            System.out.println();
+            for (int y = 0; y < actorList.size(); y++) {
+                System.out.println("Актер №" + (y + 1) + " " + actorList.get(y));
+            }
+            System.out.println();
 
-        for (int i = 0; i < actorList.size(); i++) {
             int index = scanner.nextInt();
             index--;
 
@@ -344,25 +372,42 @@ public class Theatre {
             Actor actor = actorList.get(index);
 
             System.out.println("В какой спектакль вы хотите добавить актера? 1 - Балет, 2 - Опера, 3 - Шоу");
-            switch (scanner.nextLine()) {
+            System.out.println();
+
+            switch (scanner.next()) {
                 case "1":
+                    System.out.println();
+
                     if (ballet.addActor(actor)) {
+                        System.out.println("Актёр успешно добавлен в Балет.");
+                    } else {
                         System.out.println("Актёр уже добавлен в балет.");
                     }
 
                     break;
                 case "2":
+                    System.out.println();
+
                     if (opera.addActor(actor)) {
-                        System.out.println("Актёр уже добавлен в оперу.");
+                        System.out.println("Актёр успешно добавлен в Опера.");
+                    } else {
+                        System.out.println("Актёр уже добавлен в Опера.");
                     }
 
                     break;
                 case "3":
+                    System.out.println();
+
                     if (show.addActor(actor)) {
-                        System.out.println("Актёр уже добавлен в шоу.");
+                        System.out.println("Актёр успешно добавлен в шоу.");
+                    } else {
+                        System.out.println("Актёр уже добавлен в балет.");
                     }
                     break;
             }
+
+            System.out.println();
+            System.out.println();
         }
     }
 

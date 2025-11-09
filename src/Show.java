@@ -10,12 +10,6 @@ public class Show {
     public Show(String title, int duration) {
         this.title = title;
         this.duration = duration;
-
-        System.out.println();
-        System.out.println();
-        System.out.println(this.title);
-        System.out.println();
-        System.out.println();
     }
 
     public void printActorList() {
