@@ -43,7 +43,7 @@ public class Show {
 
     public void changeActor(Actor oldActor, Actor newActor) {
         // Сопоставляем oldActor и newActor, и если их можно заменить -- проходим дальше
-        if (Objects.equals(oldActor.name, newActor.name) && Objects.equals(oldActor.surname, newActor.surname) && oldActor.gender == newActor.gender) {
+        if (!(Objects.equals(oldActor.name, newActor.name) && Objects.equals(oldActor.surname, newActor.surname) && oldActor.gender == newActor.gender)) {
 
             // Ищем индекс oldActor для того, чтобы заменить в this.listOfActors.set
             for (int indexOldActor = 0; indexOldActor < this.listOfActors.size(); indexOldActor++) {
