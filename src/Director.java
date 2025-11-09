@@ -17,6 +17,4 @@ public class Director extends Person {
                 ", numberOfShows='" + numberOfShows + '\'' +
                 '}';
     }
-
-
 }
