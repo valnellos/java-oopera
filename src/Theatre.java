@@ -456,8 +456,19 @@ public class Theatre {
         }
         Actor balletActor = ballet.listOfActors.get(balletActorIndex);
 
+
+        System.out.println("Процесс замены актеров..:");
+        System.out.println("БЫЛО:");
+        opera.printActorList();
+        ballet.printActorList();
+
         opera.changeActor(operaActor, balletActor);
         ballet.changeActor(balletActor, operaActor);
+
+        System.out.println("СТАЛО:");
+        opera.printActorList();
+        ballet.printActorList();
+        System.out.println("Смена произошла успешно!");
     }
 
     public static void switchActorOperaToActorShow() {
@@ -483,8 +494,18 @@ public class Theatre {
         }
         Actor showActor = show.listOfActors.get(showActorIndex);
 
+        System.out.println("Процесс замены актеров..:");
+        System.out.println("БЫЛО:");
+        opera.printActorList();
+        show.printActorList();
+
         opera.changeActor(operaActor, showActor);
         show.changeActor(showActor, operaActor);
+
+        System.out.println("СТАЛО:");
+        opera.printActorList();
+        show.printActorList();
+        System.out.println("Смена произошла успешно!");
     }
 
     public static void switchActorBalletToActorOpera() {
@@ -510,8 +531,18 @@ public class Theatre {
         }
         Actor operaActor = opera.listOfActors.get(operaActorIndex);
 
+        System.out.println("Процесс замены актеров..:");
+        System.out.println("БЫЛО:");
+        ballet.printActorList();
+        opera.printActorList();
+
         ballet.changeActor(balletActor, operaActor);
         opera.changeActor(operaActor, balletActor);
+
+        System.out.println("СТАЛО:");
+        ballet.printActorList();
+        opera.printActorList();
+        System.out.println("Смена произошла успешно!");
     }
 
     public static void switchActorBalletToActorShow() {
@@ -537,8 +568,18 @@ public class Theatre {
         }
         Actor showActor = show.listOfActors.get(showActorIndex);
 
+        System.out.println("Процесс замены актеров..:");
+        System.out.println("БЫЛО:");
+        ballet.printActorList();
+        show.printActorList();
+
         ballet.changeActor(balletActor, showActor);
         show.changeActor(showActor, balletActor);
+
+        System.out.println("СТАЛО:");
+        ballet.printActorList();
+        show.printActorList();
+        System.out.println("Смена произошла успешно!");
     }
 
     public static void switchActorShowToActorOpera() {
@@ -564,8 +605,18 @@ public class Theatre {
         }
         Actor operaActor = opera.listOfActors.get(operaActorIndex);
 
+        System.out.println("Процесс замены актеров..:");
+        System.out.println("БЫЛО:");
+        show.printActorList();
+        opera.printActorList();
+
         show.changeActor(showActor, operaActor);
         opera.changeActor(operaActor, showActor);
+
+        System.out.println("СТАЛО:");
+        show.printActorList();
+        opera.printActorList();
+        System.out.println("Смена произошла успешно!");
     }
 
     public static void switchActorShowToActorBallet() {
@@ -591,7 +642,17 @@ public class Theatre {
         }
         Actor balletActor = ballet.listOfActors.get(balletActorIndex);
 
+        System.out.println("Процесс замены актеров..:");
+        System.out.println("БЫЛО:");
+        show.printActorList();
+        ballet.printActorList();
+
         show.changeActor(showActor, balletActor);
         ballet.changeActor(balletActor, showActor);
+
+        System.out.println("СТАЛО:");
+        show.printActorList();
+        ballet.printActorList();
+        System.out.println("Смена произошла успешно!");
     }
 }
