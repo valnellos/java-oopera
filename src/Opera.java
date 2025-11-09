@@ -15,13 +15,14 @@ public class Opera extends MusicalShow {
 
     @Override
     public String toString() {
-        return "Opera{" +
-                "title='" + title + '\'' +
-                ", duration=" + duration +
-                ", director=" + director +
-                ", choreographer=" + choreographer +
-                ", musicAuthor =" + musicAuthor +
-                ", choirSize=" + choirSize +
+        return "Опера{" +
+                "Название='" + title + '\'' +
+                ", Длительность=" + duration +
+                ", Режиссер=" + director +
+                ", Хореограф=" + choreographer +
+                ", Автор музыки=" + musicAuthor +
+                ", Размер хора=" + choirSize +
+                ", Актёры=" + listOfActors +
                 '}';
     }
 }

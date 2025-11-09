@@ -10,11 +10,11 @@ public class Actor extends Person {
 
     @Override
     public String toString() {
-        return "Actor{" +
-                "surname='" + surname + '\'' +
-                ", name='" + name + '\'' +
-                ", gender='" + gender + '\'' +
-                ", height=" + height +
+        return "Актер{" +
+                "Имя='" + surname + '\'' +
+                ", Фамилия='" + name + '\'' +
+                ", Пол='" + gender + '\'' +
+                ", Рост=" + height +
                 '}';
     }
 }

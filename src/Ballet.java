@@ -15,11 +15,12 @@ public class Ballet extends MusicalShow {
     @Override
     public String toString() {
         return "Балет{" +
-                "title='" + title + '\'' +
-                ", duration=" + duration +
-                ", director=" + director +
-                ", musicAuthor =" + musicAuthor +
-                ", choreographer=" + choreographer +
+                "Название='" + title + '\'' +
+                ", Длительность=" + duration +
+                ", Режиссер=" + director +
+                ", Автор музыки=" + musicAuthor +
+                ", Хореограф=" + choreographer +
+                ", Актеры=" + listOfActors +
                 '}';
     }
 }

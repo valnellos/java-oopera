@@ -55,4 +55,14 @@ public class Show {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        return "Шоу{" +
+                "Название='" + title + '\'' +
+                ", Длительность=" + duration +
+                ", Режиссёр=" + director +
+                ", Актёры=" + listOfActors +
+                '}';
+    }
 }
