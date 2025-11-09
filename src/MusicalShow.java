@@ -8,11 +8,6 @@ public class MusicalShow extends Show {
        this.librettoText = librettoText;
     }
 
-    public MusicalShow() {
-        super();
-    }
-
-
     public void printLibrettoText() {
         System.out.println(this.librettoText);
     }

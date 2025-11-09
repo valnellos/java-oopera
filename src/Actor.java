@@ -17,6 +17,4 @@ public class Actor extends Person {
                 ", height=" + height +
                 '}';
     }
-
-
 }

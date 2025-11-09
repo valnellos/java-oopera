@@ -8,8 +8,4 @@ public abstract class Person {
         this.surname = surname;
         this.gender = gender;
     }
-
-    public Person() {
-
-    }
 }

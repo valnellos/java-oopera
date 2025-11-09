@@ -2,11 +2,16 @@ public class Opera extends MusicalShow {
     public Choreographer choreographer;
     public int choirSize;
 
-    public Opera(String title, int duration, Director director) {
-        super();
+    public Opera(String title, int duration, String librettoText, int choirSize, Choreographer choreographer,
+                 Director director, MusicAuthor musicAuthor) {
+        super(title, duration, librettoText);
+
+        this.choirSize = choirSize;
+        this.choreographer = choreographer;
+
+        this.setMusicAuthor(musicAuthor);
+        this.setDirector(director);
     }
-
-
 
     @Override
     public String toString() {
@@ -19,17 +24,5 @@ public class Opera extends MusicalShow {
                 ", choirSize=" + choirSize +
                 '}';
     }
-
-    public Opera(String title, int duration, String librettoText, int choirSize, Choreographer choreographer,
-                 Director director, MusicAuthor musicAuthor) {
-        super(title, duration, librettoText);
-
-        this.choirSize = choirSize;
-        this.choreographer = choreographer;
-        this.director = director;
-
-    }
-
-
 }
 

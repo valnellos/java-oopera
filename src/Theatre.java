@@ -11,9 +11,9 @@ public class Theatre {
     static ArrayList<MusicAuthor> musicAuthorList = new ArrayList<>();
 
     // Shows
-    static ArrayList<Ballet> balletList = new ArrayList<>();
-    static ArrayList<Show> showList = new ArrayList<>();
-    static ArrayList<Opera> operaList = new ArrayList<>();
+    static Ballet ballet;
+    static Show show;
+    static Opera opera;
 
     public static void main(String[] args) {
         System.out.println("Поехали!");
@@ -265,7 +265,7 @@ public class Theatre {
             return;
         }
 
-        Theatre.operaList.add(new Opera(title, duration, librettoText, choirSize, choreographer, director, musicAuthor));
+        Theatre.opera = new Opera(title, duration, librettoText, choirSize, choreographer, director, musicAuthor);
     }
 
     public static void addNormalShow() {
@@ -291,6 +291,7 @@ public class Theatre {
         }
     }
 
+    ///
     public static void addActorInShow() {
         for (int i = 0; i < actorList.size(); i++) {
             Actor element = actorList.get(i);
@@ -398,19 +399,12 @@ public class Theatre {
         }
     }
 
+    // FIXME ДОДЕЛАТЬ
     public static void changeActorOpera() {
-        System.out.println("Выберите в какой опере вы хотите сменить актера:");
-        Opera opera;
-        for (int i = 0; i < operaList.size(); i++) {
-            System.out.println("Опера №" + (i + 1) + " " + operaList.get(i));
-        }
-        int currentOperaIndex = scanner.nextInt() - 1;
-        opera = operaList.get(currentOperaIndex);
-
         // Актеры ОПЕРЫ
         System.out.println("Выберите актера оперы:");
         for (int i = 0; i < opera.listOfActors.size(); i++) {
-            System.out.println("Актера №" + (i + 1) + " " + operaList.get(i));
+            System.out.println("Актера №" + (i + 1) + " " + opera.listOfActors.get(i));
         }
         // FIXME: Проверить что мы ввели правильного актера
         int currentActorIndex = scanner.nextInt() - 1;
@@ -418,19 +412,10 @@ public class Theatre {
         // Актеры ТЕАТРА
         System.out.println("Выберите актера театра (на которого вы хотите заменить):");
         for (int i = 0; i < actorList.size(); i++) {
-            System.out.println("Актера №" + (i + 1) + " " + operaList.get(i));
+            System.out.println("Актера №" + (i + 1) + " " + actorList.get(i));
         }
         // FIXME: Проверить что мы ввели правильного актера
         int newActorIndex = scanner.nextInt() - 1;
-
-        if (currentActorIndex >= 0 && currentActorIndex < operaList.size() &&
-                newActorIndex >= 0 && newActorIndex < actorList.size()) {
-            Actor currentActor = (Actor) operaList.get(currentActorIndex);
-            Actor newActor = actorList.get(newActorIndex);
-            if (operaList.contains(currentActor)) {
-                operaList.set(currentActorIndex, newActor);
-            }
-        }
     }
 
     public static void changeActorBallet() {

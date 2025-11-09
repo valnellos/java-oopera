@@ -6,8 +6,9 @@ public class Ballet extends MusicalShow {
         super(title, duration, librettoText);
 
         this.choreographer = choreographer;
-        this.director = director;
-        this.musicAuthor = musicAuthor;
+
+        this.setDirector(director);
+        this.setMusicAuthor(musicAuthor);
     }
 
 
@@ -21,6 +22,4 @@ public class Ballet extends MusicalShow {
                 ", choreographer=" + choreographer +
                 '}';
     }
-
-
 }
