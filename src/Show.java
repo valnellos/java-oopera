@@ -19,8 +19,8 @@ public class Show {
     }
 
     public void printActorList() {
-        for (Actor actor : this.listOfActors) {
-            System.out.println(actor.toString());
+        for (int i = 0; i < this.listOfActors.size(); i++) {
+            System.out.println("Актера №" + (i + 1) + " " + this.listOfActors.get(i));
         }
     }
 
@@ -47,15 +47,20 @@ public class Show {
         return true;
     }
 
-    public void changeActor(Actor actor, int position) {
-        if (listOfActors.isEmpty() || position > listOfActors.size() - 1 || position < 0) {
-            System.out.println("Error!");
-            System.out.println("Список актеров в Шоу пуст!");
-            System.out.println("Переданная позиция больше чем актеров в шоу!");
-            System.out.println("Переданная позиция не может быть 0!");
-            return;
-        }
+    public boolean changeActor(Actor oldActor, Actor newActor) {
+        // Сопоставляем oldActor и newActor, и если их можно заменить -- проходим дальше
+        if (Objects.equals(oldActor.name, newActor.name) && Objects.equals(oldActor.surname, newActor.surname) && oldActor.gender == newActor.gender) {
 
-        this.listOfActors.set(position, actor);
+            // Ищем индекс oldActor для того, чтобы заменить в this.listOfActors.set
+            for (int indexOldActor = 0; indexOldActor < this.listOfActors.size(); indexOldActor++) {
+                Actor actorInShow = this.listOfActors.get(indexOldActor);
+                if (Objects.equals(actorInShow.name, oldActor.name) && Objects.equals(actorInShow.surname, oldActor.surname) && actorInShow.gender == oldActor.gender) {
+                    this.listOfActors.set(indexOldActor, newActor);
+                    return true;
+                }
+            }
+        }
+        
+        return  true;
     }
 }
